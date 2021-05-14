@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Header } from "./MyComponent/Header";
 import { Todos } from "./MyComponent/Todos";
@@ -53,6 +53,9 @@ function App() {
   
 
   const [todos, setTodos] = useState(initTodo);
+  const [text,useText] = useState(true)
+  const [intval,useIntval] = useState(12)
+
   
   useEffect(() => {
     localStorage.setItem('todos',JSON.stringify(todos))
@@ -72,7 +75,7 @@ function App() {
             )
         }}></Route>
         <Route exact path='/about'>
-          <About/>
+          <About texts={[text,useText]} vals={[intval,useIntval]}/>
         </Route>
    
       </Switch>
